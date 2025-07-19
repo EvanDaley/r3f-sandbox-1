@@ -8,9 +8,9 @@ import Scene3 from './scenes/Scene3';
 import Scene4 from './scenes/Scene4';
 import Scene5 from './scenes/Scene5';
 import Scene6 from './scenes/Scene6';
-import Scene7 from './scenes/Scene7';
-import Scene8 from './scenes/Scene8';
-import Scene9 from './scenes/Scene9';
+// import Scene7 from './scenes/Scene7';
+// import Scene8 from './scenes/Scene8';
+// import Scene9 from './scenes/Scene9';
 
 import useStore from '../../store'
 
@@ -18,8 +18,8 @@ export default function ThreeCanvas() {
   const scenes = [
     // Scene7,
     Scene6,
-    Scene8,
-    Scene9,
+    // Scene8,
+    Scene1,
     Scene2,
     Scene3,
     Scene4,
@@ -31,7 +31,9 @@ export default function ThreeCanvas() {
   return (
     <>
       {/*<Canvas colorManagement={true} invalidateFrameloop pixelRatio={[1, 2]}>*/}
-      <Canvas frameloop="demand" dpr={[1, 2]}>
+      <Canvas dpr={[1, 2]}>
+      {/*  <Canvas colorManagement={true} invalidateFrameloop >*/}
+
 
         <Suspense fallback={null}>
           {React.createElement(scenes[sceneIndex])}
