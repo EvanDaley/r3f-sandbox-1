@@ -187,7 +187,7 @@ function AboutMe() {
         <div className='flex-item-right'>
           <p style={{ marginTop: '0px' }}>My name is Evan Daley and I'm a Lead Software Engineer at Two Barrels LLC. </p>
           <p>I consider myself to be an experienced developer, leader and architect. My strongest proficiencies are system design, JavaScript, Vue, React, Rails, AWS, Docker, and SQL. </p>
-          <p style={{ marginBottom: '40px' }}>In my free time, I like to exercise, sleep, and dig into different technologies like R, Kubernetes, GCP, and lately, three.js. This site was built with Three.js and React. </p>
+          <p style={{ marginBottom: '40px' }}>In my free time, I like to exercise, sleep, and dig into different technologies like Kubernetes, GCP, and lately, three.js. This site was built with Three.js and React. </p>
         </div>
       </div>
     </div>

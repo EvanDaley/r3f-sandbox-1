@@ -27,6 +27,8 @@ export default function Scene({ sceneIndex }) {
                 {/*    />*/}
                 {/*</Suspense>*/}
 
+
+
             </Stage>
         </>
     );

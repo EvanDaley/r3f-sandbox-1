@@ -1,4 +1,4 @@
-import useStore from '../../store'
+import useStore from '../../store/store'
 import ReactPlayer from 'react-player'
 import {useEffect} from 'react'
 

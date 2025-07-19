@@ -1,4 +1,4 @@
-import useStore from '../../store'
+import useStore from '../../store/store'
 
 export default function Navigation() {
   const selectScene0 = useStore(state => state.selectScene0)

@@ -5,15 +5,15 @@
 import Menu from './Menu'
 import ButtonNavigation from './ButtonNavigation'
 import VideoSandbox from './VideoSandbox'
-import useStore from '../../store'
+import useStore from '../../store/store'
 
 export default function HTMLContent() {
   return (
     <>
       {/*<div className="html-content-container">*/}
-      <Menu />
-      <ButtonNavigation/>
-      <VideoSandbox />
+      {/*<Menu />*/}
+      {/*<ButtonNavigation/>*/}
+      {/*<VideoSandbox />*/}
       {/*</div>*/}
     </>
   )
