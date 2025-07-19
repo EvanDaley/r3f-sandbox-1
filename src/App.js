@@ -27,8 +27,8 @@ function App() {
 
   return (
     <>
-      <HTMLContent/>
       <ThreeCanvas/>
+      <HTMLContent/>
     </>
   );
 }
