@@ -59,7 +59,7 @@ export default function Scene() {
             <PerspectiveCamera makeDefault zoom={1} position={ [0, 0, 22.5]} />
 
             <hemisphereLight groundColor="red" />
-            <Float floatIntensity={0} rotationIntensity={0}>
+            <Float floatIntensity={2} rotationIntensity={2}>
                 <Html style={{ userSelect: 'none' }} castShadow receiveShadow occlude="blending" transform zIndexRange={[0, 0]}>
                     <iframe
                         title="embed"
