@@ -1,39 +1,34 @@
 ﻿// Host.js
-import React, { useEffect, useState } from 'react';
-import { usePeer } from './PeerContext';
+import React from 'react';
+import { usePeerStore } from '../store/peerStore';
+
 
 export default function Host() {
-    const { peer, peerId } = usePeer();
-    const [conn, setConn] = useState(null);
-    const [messages, setMessages] = useState([]);
-
-    useEffect(() => {
-        if (!peer) return;
-
-        peer.on('connection', connection => {
-            console.log('Client connected:', connection);
-            setConn(connection);
-
-            connection.on('data', data => {
-                setMessages(prev => [...prev, data]);
-            });
-
-            connection.on('open', () => {
-                connection.send('Hello from host!');
-            });
-        });
-    }, [peer]);
+    const peerId = usePeerStore(state => state.peerId);
+    const messages = usePeerStore(state => state.messages);
+    const connections = usePeerStore(state => state.connections);
+    const broadcast = usePeerStore(state => state.broadcastMessage);
 
     return (
         <div>
             <h2>Host</h2>
-            <p>Your ID: {peerId}</p>
-            <div>
-                Messages:
-                <ul>
-                    {messages.map((m, i) => <li key={i}>{m}</li>)}
-                </ul>
-            </div>
+            <p>Your ID: {peerId || '...'}</p>
+
+            <h4>Connected Clients:</h4>
+            <ul>
+                {Object.keys(connections).map(id => (
+                    <li key={id}>{id}</li>
+                ))}
+            </ul>
+
+            <button onClick={() => broadcast('Broadcast from host')}>
+                Broadcast Hello
+            </button>
+
+            <h4>Messages:</h4>
+            <ul>
+                {messages.map((m, i) => <li key={i}>{m}</li>)}
+            </ul>
         </div>
     );
 }
