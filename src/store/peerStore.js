@@ -9,9 +9,11 @@ export const usePeerStore = create((set, get) => ({
     connections: {}, // <--- new
     messages: [],
     names: {},
+    name: '',
 
-    // Everybody's id starts with the same 32 characters. The room id still gives us 1+ million combos.
-    // This makes it simple for people to type in 4 chars to find each other.
+    // Everybody's id starts with the same 32 characters.
+    // We will append 4 additional characters which will still give us 1+ million combos.
+    // This makes it simple for users to search for each other.
     connectionPrefix: 'f773d09c-0c44-4ffd-887d-a4cb8161',
 
     initPeer: () => {
@@ -20,10 +22,11 @@ export const usePeerStore = create((set, get) => ({
 
         console.log('initPeer called')
 
+        const name = pickRandomName()
+        set({ name });
+
         // Build a room id
         const roomId = generateSimpleRandomChars()
-
-
         const preferredId = get().connectionPrefix + roomId
 
         const peer = new Peer(
@@ -42,7 +45,7 @@ export const usePeerStore = create((set, get) => ({
 
         peer.on('connection', connection => {
             const { peer: senderId, metadata } = connection;
-            const name = metadata?.name || 'Unknown';
+            const name = get().name || 'Unknown';
 
             // Store the connection and name
             set(state => ({
@@ -83,17 +86,24 @@ export const usePeerStore = create((set, get) => ({
         });
     },
 
+    getShortPeerId: () => {
+        const id = get().peerId;
+        return id ? id.slice(32) : '';
+    },
+
     connectToHost: (hostId, name = '') => {
         const peer = get().peer;
         if (!peer) return;
 
-        const conn = peer.connect(hostId, {
-            metadata: { name }
-        });
-
         if (!name) {
             name = pickRandomName()
         }
+
+        const targetId = get().connectionPrefix + hostId;
+
+        const conn = peer.connect(targetId, {
+            metadata: { name }
+        });
 
         conn.on('open', () => {
             conn.send(`Hello from ${name}`);

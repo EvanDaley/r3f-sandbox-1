@@ -7,7 +7,7 @@ export default function Client() {
     const [msg, setMsg] = useState('');
     const connectToHost = usePeerStore(state => state.connectToHost);
     const sendMessageTo = usePeerStore(state => state.sendMessageTo);
-    const peerId = usePeerStore(state => state.peerId);
+    const peerId = usePeerStore(state => state.getShortPeerId());
     const messages = usePeerStore(state => state.messages);
 
     return (
