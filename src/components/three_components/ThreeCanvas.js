@@ -30,7 +30,8 @@ export default function ThreeCanvas() {
 
   return (
     <>
-      <Canvas colorManagement={true} invalidateFrameloop pixelRatio={[1, 2]}>
+      {/*<Canvas colorManagement={true} invalidateFrameloop pixelRatio={[1, 2]}>*/}
+      <Canvas frameloop="demand" dpr={[1, 2]}>
 
         <Suspense fallback={null}>
           {React.createElement(scenes[sceneIndex])}

@@ -24,15 +24,15 @@ import { MathUtils } from 'three'
 
 const material = new THREE.MeshStandardMaterial()
 const geometries = [
-    { geometry: new THREE.TetrahedronBufferGeometry(2) },
-    { geometry: new THREE.CylinderBufferGeometry(0.8, 0.8, 2, 32) },
+    { geometry: new THREE.TetrahedronGeometry(2) },
+    { geometry: new THREE.CylinderGeometry(0.8, 0.8, 2, 32) },
     { geometry: new THREE.ConeGeometry(1.1, 1.7, 32) },
-    { geometry: new THREE.SphereBufferGeometry(1.5, 32, 32) },
-    { geometry: new THREE.IcosahedronBufferGeometry(2) },
-    { geometry: new THREE.TorusBufferGeometry(1.1, 0.35, 16, 32) },
+    { geometry: new THREE.SphereGeometry(1.5, 32, 32) },
+    { geometry: new THREE.IcosahedronGeometry(2) },
+    { geometry: new THREE.TorusGeometry(1.1, 0.35, 16, 32) },
     { geometry: new THREE.OctahedronGeometry(2) },
-    { geometry: new THREE.SphereBufferGeometry(1.5, 32, 32) },
-    { geometry: new THREE.BoxBufferGeometry(2.5, 2.5, 2.5) }
+    { geometry: new THREE.SphereGeometry(1.5, 32, 32) },
+    { geometry: new THREE.BoxGeometry(2.5, 2.5, 2.5) }
 ]
 
 function Geometries() {
