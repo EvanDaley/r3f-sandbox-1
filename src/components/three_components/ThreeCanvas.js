@@ -1,4 +1,4 @@
-import { OrbitControls, Loader, PerspectiveCamera } from '@react-three/drei';
+import { Loader } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import React, { Suspense } from 'react';
 
@@ -12,11 +12,13 @@ import Scene6 from './scenes/Scene6';
 import Scene8 from './scenes/Scene8';
 import Scene9 from './scenes/Scene9';
 import Scene10 from './scenes/Scene10';
+import Scene11 from './scenes/Scene11';
 
 import useStore from '../../store'
 
 export default function ThreeCanvas() {
   const scenes = [
+    Scene11,
     Scene10,
     Scene6,
     Scene8,
@@ -32,21 +34,11 @@ export default function ThreeCanvas() {
 
   return (
     <>
-      {/*<Canvas colorManagement={true} invalidateFrameloop pixelRatio={[1, 2]}>*/}
       <Canvas dpr={[1, 2]}>
-      {/*  <Canvas colorManagement={true} invalidateFrameloop >*/}
-
-
         <Suspense fallback={null}>
           {React.createElement(scenes[sceneIndex])}
         </Suspense>
-
-        {/* <Stats /> */}
-
-
-
       </Canvas>
-
       <Loader />
     </>
   );

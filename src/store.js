@@ -12,9 +12,7 @@ const useStore = create(set => ({
   })),
 
   sceneIndex: 0,
-  selectScene0: () => set(() => {
-    return { sceneIndex: 0 }
-  }),
+  selectScene0: () => set(() => ({ sceneIndex: 0 })),
   selectScene1: () => set(() => ({ sceneIndex: 1 })),
   selectScene2: () => set(() => ({ sceneIndex: 2 })),
   selectScene3: () => set(() => ({ sceneIndex: 3 })),
