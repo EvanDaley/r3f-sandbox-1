@@ -1,20 +1,10 @@
-import OxygenContainer2 from '../objects/OxygenContainer2'
-import Box from '../objects/Box'
-import AbstractSphere from '../objects/AbstractSphere'
 import {
-  OrbitControls, Stats, Stage, Loader, PerspectiveCamera,
-  Text,
-  OrthographicCamera, Environment, useTexture, Reflector
+  OrbitControls,
+  OrthographicCamera
 } from '@react-three/drei';
-import OxygenContainer3 from '../objects/OxygenContainer3'
 import Robot from '../objects/Robot'
 
-
-// import { Billboard, Html, OrbitControls, OrthographicCamera, Plane, Points } from "@react-three/drei"
-import { Canvas, useThree } from '@react-three/fiber';
 import React, { useState, useEffect, Suspense, useRef, useMemo } from 'react';
-import * as THREE from 'three'
-import { MeshPhysicalMaterial } from 'three';
 
 import { useSpring, animated } from "@react-spring/three"
 
@@ -54,6 +44,7 @@ function grid(w, h) {
   return res
 }
 
+// Dev note: This acts as a container that moves everything inside it. I think I could network this with Peer.js?
 const SmoothMove = ({ children, position }) => {
   const { pos } = useSpring({
     pos: position,
@@ -82,11 +73,6 @@ function Room() {
 
   return (
     <>
-      <group position={[3, 2, 0]}>
-        <pointLight  color="#66ffff" intensity={3} decay={3} distance={25} />
-        <Robot scale={[1,1,1]}/>
-      </group>
-
       <group position={[-((cellCount / 2) * spacing), 0, -((cellCount / 2) * spacing)]}>
         {cells.map((pos) => (
           <Cell onClick={onTargetClicked} key={`cell-${pos}`} position={pos} />
@@ -94,10 +80,14 @@ function Room() {
 
         <SmoothMove position={position}>
 
-          <mesh position={[0, 0, 0]}>
-            <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-            <meshNormalMaterial attach="material" />
-          </mesh>
+        <group position={[2, 0, 0]}>
+            <Robot scale={[1,1,1]}/>
+        </group>
+
+          {/*<mesh position={[0, 0, 0]}>*/}
+          {/*  <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />*/}
+          {/*  <meshNormalMaterial attach="material" />*/}
+          {/*</mesh>*/}
 
         </SmoothMove>
 
@@ -109,9 +99,12 @@ function Room() {
 export default function Scene() {
   return (
     <>
+        <group position={[2, 3, 0]}>
+            <pointLight  color="#66ffff" intensity={3} decay={3} distance={25} />
+        </group>
       <OrthographicCamera makeDefault position={[15, 15, 15]} zoom={60} />
       <ambientLight intensity={0.1} />
-      {/* <pointLight position={[10, 10, 10]} /> */}
+       {/*<pointLight position={[10, 10, 10]} />*/}
       <Suspense fallback={null}>
         <Room />
       </Suspense>
