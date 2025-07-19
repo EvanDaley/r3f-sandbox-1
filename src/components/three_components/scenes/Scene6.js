@@ -100,9 +100,9 @@ function Room() {
 export default function Scene() {
     return (
         <>
-            <group position={[2, 3, 0]}>
-                <pointLight color="#66ffff" intensity={3} decay={3} distance={25}/>
-            </group>
+            {/*<group position={[2, 3, 0]}>*/}
+            {/*    <pointLight color="#66ffff" intensity={3} decay={3} distance={25}/>*/}
+            {/*</group>*/}
             <OrthographicCamera makeDefault position={[15, 15, 15]} zoom={60}/>
             <ambientLight intensity={0.1}/>
             <Suspense fallback={null}>

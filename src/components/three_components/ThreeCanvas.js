@@ -9,16 +9,18 @@ import Scene4 from './scenes/Scene4';
 import Scene5 from './scenes/Scene5';
 import Scene6 from './scenes/Scene6';
 // import Scene7 from './scenes/Scene7';
-// import Scene8 from './scenes/Scene8';
-// import Scene9 from './scenes/Scene9';
+import Scene8 from './scenes/Scene8';
+import Scene9 from './scenes/Scene9';
+import Scene10 from './scenes/Scene10';
 
 import useStore from '../../store'
 
 export default function ThreeCanvas() {
   const scenes = [
-    // Scene7,
+    Scene10,
     Scene6,
-    // Scene8,
+    Scene8,
+    Scene9,
     Scene1,
     Scene2,
     Scene3,

@@ -56,7 +56,7 @@ function Geometries() {
 export default function Scene() {
     return (
         <>
-            {/*<PerspectiveCamera makeDefault zoom={1} position={ [0, 0, 22.5]} />*/}
+            <PerspectiveCamera makeDefault zoom={1} position={ [0, 0, 22.5]} />
 
             <hemisphereLight groundColor="red" />
             <Float floatIntensity={2} rotationIntensity={2}>

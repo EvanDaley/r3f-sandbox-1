@@ -7,7 +7,7 @@ import React, { useRef } from 'react'
 import { useGLTF, useAnimations, useTexture } from '@react-three/drei'
 // import { RepeatWrapping } from '@three'
 
-const filePath = window.location.href + '/Monkey.glb'
+const filePath = window.location.href + '/Stork.glb'
 
 export default function Model(props) {
   const texture = useTexture(window.location.href + '/images/flakes.png')

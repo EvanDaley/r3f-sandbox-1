@@ -34,11 +34,11 @@ export default function LinesRobot(props) {
   const edges3 = useMemo(() => new THREE.EdgesGeometry(nodes.Cube001_3.geometry), [nodes])
 
   // Rotate mesh every frame, this is outside of React without overhead
-  useFrame(() => {
-    if (group.current != null) {
-      group.current.rotation.y = group.current.rotation.y += 0.003
-    }
-  })
+  // useFrame(() => {
+  //   if (group.current != null) {
+  //     group.current.rotation.y = group.current.rotation.y += 0.003
+  //   }
+  // })
 
   return (
     <group ref={group} {...props} dispose={null}>

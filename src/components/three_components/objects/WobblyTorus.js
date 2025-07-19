@@ -33,7 +33,7 @@ export default function WobblyTorus(props) {
         receiveShadow
         ref={group}
       >
-        <torusKnotBufferGeometry args={[.5, 0.25, 128, 32]} />
+        <torusKnotGeometry args={[.5, 0.25, 128, 32]} />
         <MeshDistortMaterial
           color={props.color}
           smoothShading
