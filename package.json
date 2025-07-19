@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "Shows how to use HTML with correct occlusion and custom material props and Bloom.",
   "keywords": [],
+  "homepage": "https://evandaley.github.io/r3f-sandbox-1/",
   "main": "src/index.js",
   "dependencies": {
     "@pmndrs/branding": "0.0.8",
     "@react-three/drei": "9.74.15",
     "@react-three/fiber": "8.13.3",
     "@react-three/postprocessing": "2.14.9",
+    "gh-pages": "^3.2.3",
     "leva": "0.9.35",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -21,6 +23,8 @@
   "scripts": {
     "start": "react-scripts start",
     "dev": "react-scripts start",
+    "deploy": "gh-pages -d build",
+    "ship": "npm run build && npm run deploy",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
