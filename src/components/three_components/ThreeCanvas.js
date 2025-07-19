@@ -9,6 +9,7 @@ import Scene4 from './scenes/Scene4';
 import Scene5 from './scenes/Scene5';
 import Scene6 from './scenes/Scene6';
 import Scene7 from './scenes/Scene7';
+import Scene8 from './scenes/Scene8';
 
 import useStore from '../../store'
 
@@ -16,6 +17,7 @@ export default function ThreeCanvas() {
   const scenes = [
     // Scene7,
     Scene6,
+    Scene8,
     Scene1,
     Scene2,
     Scene3,
