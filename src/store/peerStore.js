@@ -1,7 +1,7 @@
 ﻿// peerStore.js
 import create from 'zustand';
 import Peer from 'peerjs';
-import {generateSimpleRandomChars, pickRandomName} from "../utilities/stringHelpers";
+import {generateSimpleId, generateSimpleRandomChars, pickRandomName} from "../utilities/stringHelpers";
 
 export const usePeerStore = create((set, get) => ({
     peer: null,
@@ -26,7 +26,7 @@ export const usePeerStore = create((set, get) => ({
         set({ name });
 
         // Build a room id
-        const roomId = generateSimpleRandomChars()
+        const roomId = generateSimpleId()
         const preferredId = get().connectionPrefix + roomId
 
         const peer = new Peer(

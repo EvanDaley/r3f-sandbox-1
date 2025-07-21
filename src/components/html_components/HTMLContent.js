@@ -12,7 +12,7 @@ export default function HTMLContent() {
     <>
       {/*<div className="html-content-container">*/}
       {/*<Menu />*/}
-      {/*<ButtonNavigation/>*/}
+      <ButtonNavigation/>
       {/*<VideoSandbox />*/}
       {/*</div>*/}
     </>

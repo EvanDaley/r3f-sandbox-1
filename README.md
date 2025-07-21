@@ -1,7 +1,7 @@
 # r3f-isometric
 
 ## Live Demo
-https://evandaley.github.io/r3f-isometric/
+https://evandaley.github.io/r3f-sandbox-1/
 
 ## Description
 
